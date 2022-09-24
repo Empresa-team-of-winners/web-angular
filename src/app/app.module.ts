@@ -20,6 +20,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 
+/*Rest*/
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { CompanyComponent } from './components/company/company.component';
+import { CreateCompanyComponent } from './components/create-company/create-company.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +33,10 @@ import { RegisterComponent } from './components/register/register.component';
     LogInComponent,
     RegisterComponent,
     RegisterComponent,
-    LogInComponent
+    LogInComponent,
+    HomeComponent,
+    CompanyComponent,
+    CreateCompanyComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +45,8 @@ import { RegisterComponent } from './components/register/register.component';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

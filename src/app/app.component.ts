@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ApiService } from './services/users/api.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-material-login-template';
+
+
+constructor(
+  public fb: FormBuilder,
+  public apiService: ApiService
+) {
+
+}
+
 }

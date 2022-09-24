@@ -1,0 +1,39 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Crear Empresa</mat-card-title>
+      </mat-card-header>
+  
+      <form [formGroup]="companyForm" (ngSubmit)="guardar()">
+  
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Nombre" formControlName="name">
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Documento o Nit" formControlName="document">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Telefono" formControlName="phone">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Direccion" formControlName="address">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" >
+          <mat-label>Lider</mat-label>
+          <mat-select formControlName="users">
+            <mat-option [value]="user.id" *ngFor="let user of users">{{user.email}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+  
+        </mat-card-content>
+  
+        <button mat-stroked-button color="accent" class="btn-block">Crear empresa</button>
+  
+      </form>
+    </mat-card>
+  </div>
+  
