@@ -25,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { CompanyComponent } from './components/company/company.component';
 import { CreateCompanyComponent } from './components/create-company/create-company.component';
+import { TransactionComponent } from './components/transaction/transaction.component';
+import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
 
 
 @NgModule({
@@ -36,7 +38,9 @@ import { CreateCompanyComponent } from './components/create-company/create-compa
     LogInComponent,
     HomeComponent,
     CompanyComponent,
-    CreateCompanyComponent
+    CreateCompanyComponent,
+    TransactionComponent,
+    CreateTransactionComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export interface Enterprise {
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','see'];
 
   enterprises: Enterprise[];
   constructor(
@@ -28,7 +28,6 @@ export class CompanyComponent implements OnInit {
 
   getAllEnterprise():void{
     this.apiService.getEnterprises().subscribe(resp => {
-      console.log(resp);
       this.enterprises = resp;
     },
       error => { console.error(error) }
@@ -37,6 +36,16 @@ export class CompanyComponent implements OnInit {
 
   goToCreate():void{
     this.router.navigate(['createcompany']);
+  }
+
+  deleteCompany(id:any):void{
+    this.apiService.deleteEnterprise(id).subscribe(resp => {
+      if(resp == true){
+        this.getAllEnterprise();
+      }
+    },
+      error => { console.error(error) }
+    )
   }
 
 }

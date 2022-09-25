@@ -11,21 +11,36 @@ export class ApiService {
   
     constructor(private httpClient: HttpClient) { }
   
+
+    //user
   
     public saveUser (user:any): Observable<any>{
         return this.httpClient.post(this.API_SERVER+"user/",user);
       }
 
+      public getUsers (): Observable<any>{
+        return this.httpClient.get(this.API_SERVER+"user/");
+      }
+
+      //enterprise
+
     public getEnterprises (): Observable<any>{
       return this.httpClient.get(this.API_SERVER+"enterprise/");
     }
-
-    public getUsers (): Observable<any>{
-      return this.httpClient.get(this.API_SERVER+"user/");
-    }
-
     public saveEnterprise (enterprise:any): Observable<any>{
       return this.httpClient.post(this.API_SERVER+"enterprise/",enterprise);
     }
-  
+
+    public deleteEnterprise (id:any): Observable<any>{
+      return this.httpClient.delete(this.API_SERVER+"enterprise/delete/"+id);
+    }
+
+    //transaction
+    public getTransactions (): Observable<any>{
+      return this.httpClient.get(this.API_SERVER+"transaction/");
+    }
+    public saveTransaction (transaction:any): Observable<any>{
+      return this.httpClient.post(this.API_SERVER+"transaction/",transaction);
+    }
+
   }
